@@ -34,6 +34,7 @@ app.use("/chat", ChatRoute);
 app.use("/message", MessageRoute);
 
 const CONNECTION = process.env.MONGODB_CONNECTION;
+console.log(CONNECTION);
 mongoose
   .connect(CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(PORT, () => console.log(`Listening at Port ${PORT}`)))
